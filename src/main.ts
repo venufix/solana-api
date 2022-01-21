@@ -7,11 +7,12 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   const documentBuilder = new DocumentBuilder()
-    .setTitle('Solana wallets')
+    .setTitle('Solana wallets dashbaord')
+    .setDescription('Ahalan wa Salahan Ma ha shirlul')
     .build();
 
   const document = SwaggerModule.createDocument(app, documentBuilder);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('', app, document);
 
   await app.listen(3000, '0.0.0.0');
 }
