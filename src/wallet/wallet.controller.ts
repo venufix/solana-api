@@ -23,8 +23,9 @@ export class WalletController {
     required: true,
     description: 'Wallet public key',
     example: '7ivguYMpnUBMboByJbKc7z31fJMg2pXYQ4nNPziWLchZ',
+    type: String,
   })
-  async getWalletMetadata(@Param('pubKey', PublicKeyPipe) publicKey: PublicKey): Promise<IWallet> {
+  async getWalletMetadata(@Param('publicKey', PublicKeyPipe) publicKey: PublicKey): Promise<IWallet> {
     console.log(`Requested specific wallet with pubkey: ${publicKey}`)
     const wallet = await this._walletService.getAccountInfo(publicKey);
     return wallet;
